@@ -1,0 +1,14 @@
+.pop-of{
+    display: none;
+   
+}
+.pop-on{
+    background-color: green;
+    position: absolute;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+    bottom: 25%;
+    margin: auto;
+    background: rgba(155, 172, 173, 0.774);
+}
