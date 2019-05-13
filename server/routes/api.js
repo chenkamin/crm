@@ -1,20 +1,30 @@
 const express = require('express')
 const router = express.Router()
-const Todo = require('../model/Todo')
+const Clients = require('../model/Clients')
 
-
-
-router.get('/todos', function(req,res){
-    Todo.find({}, function(err,result){
+router.get('/clients', function(req,res){
+    Clients.find({}, function(err,result){
         res.send(result)
     })
 })
 
-router.post('/todo', function(req,res){
+router.post('/client', function(req,res){
     console.log(req.body)
-    let t1 = new Todo(req.body)
+    let t1 = new Clients(req.body)
     t1.save()
     res.end()
+})
+
+router.put('/client/:clientId', function(req,res){
+    let client = req.params.clientId
+    console.log(client) //THE ID
+    console.log(req.body)
+    
+    Clients.findOneAndUpdate({_id: client}, req.body ,(err, result)=>  {
+        
+    } )
+    
+    res.send(req.body)
 })
 
 

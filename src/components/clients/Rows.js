@@ -12,8 +12,9 @@ class Rows extends Component {
             <div>
 
             <div className="row" onClick={this.showPop}>
-            <div className="row-item">{data.name}</div>
-            <div className="row-item">{data.email}</div>
+            <div className="row-item">{data.name.split(" ")[0]}</div>
+            <div className="row-item">{data.name.split(" ")[1]}</div>
+            <div className="row-item email">{data.email}</div>
             <div className="row-item">{data.firstContact}</div>
             <div className="row-item">{data.emailType}</div>
             <div className="row-item">{data.sold? "V": "X"}</div>

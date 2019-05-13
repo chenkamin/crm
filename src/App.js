@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import Table from './components/clients/Table';
-import Crud from './components/Crud';
+import Crud from './components/crud/Crud';
 import Analytics from './components/Analytics';
 
 

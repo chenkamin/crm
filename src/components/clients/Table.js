@@ -3,6 +3,7 @@ import data from '../../data.json'
 import  Rows  from './Rows';
 import  TableHeader  from './TableHeader';
 import  Inputs  from './Inputs';
+import axios from 'axios';
 import  PopUp  from './Popup';
 
 
@@ -16,9 +17,15 @@ class Table extends Component {
             showPop : false
         }
     }
-   
-    componentDidMount = async () =>{this.setState({ data: data }) }
-
+    getData = async () =>  {
+        let data = await axios.get("http://localhost:8080/clients")
+        return data
+     }
+     componentDidMount = async () =>{
+        let data = await this.getData()
+        console.log(data.data)
+        this.setState({ data: data.data })
+      }
     handleInput = (e) => {
         const target = e.target
         const value =target.value;
@@ -33,7 +40,6 @@ class Table extends Component {
 
     render() { 
        let data = this.state.data.filter(m=> m[this.state.dropDown].includes(this.state.search)) 
-        console.log(data.map(d=>d.name))
 
         return (
             <div>

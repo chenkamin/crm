@@ -2,7 +2,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const api = require('./server/routes/api')
-const Todo = require('./server/model/Todo')
+const Clients = require('./server/model/Clients')
 
 const path = require('path')
 const app = express()
@@ -19,7 +19,7 @@ app.use(function (req, res, next) {
 })
 //mongoose Setup
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/todoDB', { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/crmDB', { useNewUrlParser: true })
 //bodyParser Setup
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))

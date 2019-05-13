@@ -1,5 +1,15 @@
 .row{
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(8, 1fr);
     cursor: pointer;
+    border-top:1px solid black;
+  }
+
+  .row-item{
+    display: grid;
+    justify-self: center;
+    width:150px;
+  }
+  .email{
+    width:300px;
   }

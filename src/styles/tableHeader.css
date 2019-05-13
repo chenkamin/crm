@@ -1,4 +1,18 @@
 .table-header-container{
     display: grid;
-    grid-template-columns: repeat(7, 1fr)
+    grid-template-columns: repeat(8, 1fr);
+    border: 1px solid black;
+    border-bottom: none;
+    background-color:rgba(180, 238, 63, 0.671);
+
+  }
+
+  .table-header-item{
+    display: grid;
+    justify-self: center;
+    width:150px;
+  }
+
+  .email{
+    width:300px;
   }

@@ -5,8 +5,10 @@ class TableHeader extends Component {
     render() { 
         return ( 
         <div className="table-header-container">
-            <div className="table-header-item">name</div>
-            <div className="table-header-item">email</div>
+            <div className="table-header-item">first name</div>
+            <div className="table-header-item">last name</div>
+
+            <div className="table-header-item email">email</div>
             <div className="table-header-item">firstContact</div>
             <div className="table-header-item">emailType</div>
             <div className="table-header-item">sold</div>
