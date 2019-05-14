@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import '../../styles/inputs.css'
 
 class Inputs extends Component {
     render() { 
         return ( 
-            <div>
+            <div className="inputs">
                 <input type="text" name="search" placeholder="Search" 
                  onChange={this.props.handleInput} />
                  <select id="select-input" name="dropDown"  onChange={this.props.handleInput}>

@@ -33,7 +33,6 @@ class Table extends Component {
         this.setState({[name] : value})
       }
     showPop =() => {
-        console.log("fff")
         const currentState = this.state.showPop;
         this.setState({ showPop: !currentState });
     }
@@ -45,7 +44,7 @@ class Table extends Component {
             <div>
                 <Inputs handleInput={this.handleInput} />
                 <TableHeader />
-                <PopUp class={this.state.showPop} />
+                <PopUp class={this.state.showPop} showPop={this.showPop}/>
 
                {this.state.search == "" && this.state.dropDown == "" ? 
                this.state.data.map(d=> <Rows data={d} key={d.id} showPop={this.showPop} />):

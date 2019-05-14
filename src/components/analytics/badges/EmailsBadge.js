@@ -3,7 +3,6 @@ import React, {Component } from 'react';
 class EmailsBadge extends Component {
     render() { 
         let NumberOfMails = this.props.data.data.map(d=> d.emailType).filter(f=> f !== null).length
-        console.log(NumberOfMails)
         
 
         return ( 

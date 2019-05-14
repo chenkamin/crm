@@ -8,7 +8,6 @@ class TableHeader extends Component {
             <div className="table-header-item">first name</div>
             <div className="table-header-item">last name</div>
 
-            <div className="table-header-item email">email</div>
             <div className="table-header-item">firstContact</div>
             <div className="table-header-item">emailType</div>
             <div className="table-header-item">sold</div>

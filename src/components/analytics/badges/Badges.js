@@ -2,15 +2,17 @@ import React, {Component } from 'react';
 import  DateBadge  from './DateBadge';
 import  EmailsBadge  from './EmailsBadge';
 import  OutstandingBadge  from './OutstandingBadge';
+import  CountryBadge  from './CountryBadge';
 
 class Badges extends Component {
     
     render() { 
         return ( 
-            <div>
-            <DateBadge data={this.props.data}/>
-            <EmailsBadge data={this.props.data}/>
-            <OutstandingBadge data={this.props.data} />
+            <div className="badges">
+                <DateBadge data={this.props}/>
+                <EmailsBadge data={this.props}/>
+                <OutstandingBadge data={this.props} />
+                <CountryBadge data={this.props} />
             </div>
             )
     }

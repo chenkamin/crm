@@ -58,7 +58,7 @@ class Crud extends Component {
         }
         else{
           let client = this.state.data.find(d=> d.id == clientId)
-           updatedData = {name: client.name, id: client.id, owner: this.state.ownerUpdate}
+           updatedData = {owner: this.state.ownerUpdate}
         }
         
        let data = await axios.put(`http://localhost:8080/client/${clientId}`, updatedData)
