@@ -11,22 +11,25 @@ class DateSalesChart extends Component {
     }
   }
 
-  manageCountries = (clients) => {
+  manageCountries = (clients, param) => {
     // // TODO: Seperate function
-    const data = clients.map(d => ({ country: d.country, sold: d.sold }))
+    console.log()
+    let data = clients.map(d => ({ [param]: d[param], sold: d.sold }))
+    console.log(data)
+    let mySet = new Set()
+    let countriesSet = data.map(d=> mySet.add(d[param]))
 
-    let countries = [
-      { country: "Turkey", count: 0 },
-      { country: "Croatia", count: 0 },
-      { country: "Greece", count: 0 },
-      { country: "Romania", count: 0 },
-      { country: "France", count: 0 }
-    ]
+    let countriesArr = Array.from(mySet)
+    console.log(countriesArr)
+
+    let countries = countriesArr.map(c =>({ country: c, count: 0 }))
+    console.log(countries)
+ 
 
     for (let d of data) {
       if (d.sold) {
         for (let c of countries) {
-          if (d.country === c.country) {
+          if (d[param] === c.country) {
             c.count++
           }
         }
@@ -37,7 +40,7 @@ class DateSalesChart extends Component {
     }
 
   componentDidMount = async () => {
-    await this.manageCountries( this.props.data )
+    await this.manageCountries( this.props.data, "emailType")
   }
 
   render() {
