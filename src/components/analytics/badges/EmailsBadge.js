@@ -7,7 +7,7 @@ class EmailsBadge extends Component {
 
         return ( 
             <div className="EmailBadge">
-                <i className="far fa-envelope"></i>
+               <div className="badge-icon email"> <i className="far fa-envelope"></i></div>
                 <div>{NumberOfMails}</div>
                 <div>Emails - sent</div>
             </div>

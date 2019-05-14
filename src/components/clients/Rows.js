@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../styles/rows.css'
+import '../../styles/table/rows.css'
 
 class Rows extends Component {
     showPop = () => {
@@ -19,6 +19,7 @@ class Rows extends Component {
             <div className="row-item">{data.sold? "V": "X"}</div>
             <div className="row-item">{data.owner}</div>
             <div className="row-item">{data.country}</div>
+            
             </div>
             
             </div>

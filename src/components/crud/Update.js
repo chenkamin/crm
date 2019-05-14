@@ -10,15 +10,21 @@ class Update extends Component {
             return
         }
         let client = this.props.data.find(d=> d.name == this.props.state.clientUpdate)
-        console.log(client)
         this.props.updateClient(client.id)
     }
    
+    makeOwnersSet = () => {
+        let ownersSet = new Set()
+        this.props.data.map(d=> ownersSet.add(d.owner))
+        let ownersArr = Array.from(ownersSet)
+       return ownersArr
+    }
 
     render() { 
         let data =this.props.data
-        console.log(data)
-        console.log(this.props.state.clientUpdate)
+
+      
+
         return (
             <div>
                 <h3>Update</h3>
@@ -32,7 +38,7 @@ class Update extends Component {
                 <p>Transfer Ownership to: </p>
                 <select id="select-input" name="ownerUpdate"  onChange={this.props.handleInput} >
                          <option>owner</option>
-                            {data.map(d=> <option  >{d.owner}</option>)}
+                            {this.makeOwnersSet().map(d=> <option >{d}</option>)}
                 </select>
                 <button onClick={this.FindIdAndUpdateClient} >Transfer</button>
                 <p>Send Email: </p>

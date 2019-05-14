@@ -5,6 +5,7 @@ class DateBadge extends Component {
 
     findDates = () => {
         let dates = this.props.data.data.map(d=> d.firstContact.split("-")[1])
+        
         let date =((new Date()).getMonth() + 1).toString()
         let myDate = 0+ date
         let times = 0
@@ -20,7 +21,7 @@ class DateBadge extends Component {
 
         return ( 
             <div className="dateBadge">
-            <i className="fas fa-chart-line"></i>
+             <div className="badge-icon date"><i className="fas fa-chart-line"></i></div>
             <div>{this.findDates()}</div>
             <div>new {months[new Date().getMonth()]} customers</div>
             </div>

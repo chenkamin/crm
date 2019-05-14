@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../styles/popup.css'
+import '../../styles/table/popup.css'
 
 class Popup extends Component {
 
@@ -9,7 +9,7 @@ class Popup extends Component {
     
     render() { 
         return ( <div className={this.props.class? "pop-on row":"pop-of row"} >
-        <i class="fas fa-times" onClick={this.showPop}></i>
+        <i className="fas fa-times" onClick={this.showPop}></i>
         <div className="pop-inputs">
         <div id="name">
             <div className="pop-item">Name:</div>

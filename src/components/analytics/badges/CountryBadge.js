@@ -26,7 +26,7 @@ class CountryBadge extends Component {
 
         return ( 
         <div className="CountryBadge">
-        <div className="badge-icon"><i className="fas fa-globe-americas"></i></div>
+        <div className="badge-icon country"><i className="fas fa-globe-americas"></i></div>
             <div>{this.findCountry()}</div>
             <div>Hottest Country</div>
             </div>

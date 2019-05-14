@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CountryLogic from './CountryLogic';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, } from 'recharts';
 
 class DateSalesChart extends Component {

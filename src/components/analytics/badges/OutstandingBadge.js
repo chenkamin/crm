@@ -6,7 +6,7 @@ class OutstandingBadge extends Component {
 
         return ( 
             <div className="OutstandingBadge">
-                    <i className="fas fa-user"></i>
+                     <div className="badge-icon out"><i className="fas fa-user"></i></div>
                 <div>{NumberOfOutstanding}</div>
                 <div>Outstanding Clients</div>
             </div>  
