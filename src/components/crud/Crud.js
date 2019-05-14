@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import Update from './Update';
 import Add from './Add';
+import '../../styles/crud/crud.css'
 
 class Crud extends Component {
     constructor(){

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, } from 'recharts';
+import '../../../styles/analytics/analytics.css'
 
 class DateSalesChart extends Component {
   constructor(props) {

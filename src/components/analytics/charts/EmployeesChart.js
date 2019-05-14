@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, } from 'recharts';
+import '../../../styles/analytics/analytics.css'
 
 
 class EmployeesChart extends Component {
@@ -27,7 +28,7 @@ class EmployeesChart extends Component {
   }
 
   MakeDataForCharts = () => {
-    let sortedArr =this.state.data.sort((a,b) => b.count- a.count).splice(0,3)
+    let sortedArr =this.state.data.sort((a,b) => b.count- a.count).slice(0,3)
     console.log(sortedArr)
     return sortedArr
 }
@@ -41,7 +42,7 @@ class EmployeesChart extends Component {
     return (
       <BarChart width={500} height={300}  data={this.MakeDataForCharts()} barSize={25} layout={"vertical"}>
       <XAxis type="number" />     
-      <YAxis  dataKey="owner" type="category"/>
+      <YAxis  dataKey="owner" type="category" width={100}/>
       <Tooltip />
       <Bar dataKey="count" fill="#a0520e" />
 

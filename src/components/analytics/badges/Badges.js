@@ -3,6 +3,7 @@ import  DateBadge  from './DateBadge';
 import  EmailsBadge  from './EmailsBadge';
 import  OutstandingBadge  from './OutstandingBadge';
 import  CountryBadge  from './CountryBadge';
+import '../../../styles/analytics/analytics.css'
 
 class Badges extends Component {
     

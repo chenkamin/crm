@@ -5,7 +5,7 @@ class Inputs extends Component {
     render() { 
         return ( 
             <div className="inputs">
-                <input type="text" name="search" placeholder="Search" 
+                <input id="input"type="text" name="search" placeholder="Search" 
                  onChange={this.props.handleInput} />
                  <select id="select-input" name="dropDown"  onChange={this.props.handleInput}>
                          <option>name</option>

@@ -1,4 +1,5 @@
 import React, {Component } from 'react';
+import '../../../styles/analytics/analytics.css'
 
 class CountryBadge extends Component {
 
@@ -25,7 +26,7 @@ class CountryBadge extends Component {
    
 
         return ( 
-        <div className="CountryBadge">
+        <div className="Badge">
         <div className="badge-icon country"><i className="fas fa-globe-americas"></i></div>
             <div>{this.findCountry()}</div>
             <div>Hottest Country</div>

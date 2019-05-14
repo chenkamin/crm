@@ -1,5 +1,5 @@
 import React, {Component } from 'react';
-import { identifier } from '@babel/types';
+import '../../../styles/analytics/analytics.css'
 
 class DateBadge extends Component {
 
@@ -20,7 +20,7 @@ class DateBadge extends Component {
         let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
         return ( 
-            <div className="dateBadge">
+            <div className="Badge">
              <div className="badge-icon date"><i className="fas fa-chart-line"></i></div>
             <div>{this.findDates()}</div>
             <div>new {months[new Date().getMonth()]} customers</div>

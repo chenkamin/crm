@@ -1,0 +1,70 @@
+.update-container{
+    margin: 3%;
+}
+
+.update input{
+    background: none;
+    border: none;
+   border-bottom: 0.5px solid rgb(190, 188, 188);
+
+}
+.update{
+    margin-bottom: 2%;
+
+}
+
+.update-item{
+    margin-bottom: 2%;
+    margin-left: 3%;
+    
+    display:grid;
+    width:40%;
+    grid-template-columns: 1.1fr 1fr 1fr;
+}
+
+.buttons-update{
+    color:gold;
+    text-shadow: 0.5px 0.5px 0.5px rgb(212, 182, 9);
+}
+
+
+
+.add-container{
+    margin-left: 6%;
+}
+
+.add-item{
+    display: grid;
+    grid-template-columns: 0.6fr 0.6fr;
+    width:30%;
+}
+.add-btn{
+    margin-top:2%;
+    margin-bottom: 5%;
+    background-color:gold;
+    width: 30%;
+    display: grid;
+    height:6vh;
+}
+.btn-text{
+    align-self: center;
+    justify-self: center;
+    text-shadow: 0.3px 0.3px 0.3px black;
+}
+
+
+#add-header{
+    margin-left:3%;
+}
+
+.add-container input{
+    background: none;
+    border: none;
+   border-bottom: 0.5px solid rgb(190, 188, 188);
+
+
+}
+#line{
+    border-bottom: 1px solid rgb(190, 188, 188);
+    opacity: 0.5;
+}

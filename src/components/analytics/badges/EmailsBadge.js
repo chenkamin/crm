@@ -1,4 +1,5 @@
 import React, {Component } from 'react';
+import '../../../styles/analytics/analytics.css'
 
 class EmailsBadge extends Component {
     render() { 
@@ -6,7 +7,7 @@ class EmailsBadge extends Component {
         
 
         return ( 
-            <div className="EmailBadge">
+            <div className="Badge">
                <div className="badge-icon email"> <i className="far fa-envelope"></i></div>
                 <div>{NumberOfMails}</div>
                 <div>Emails - sent</div>
