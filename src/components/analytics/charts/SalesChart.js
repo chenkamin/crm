@@ -8,23 +8,24 @@ class DateSalesChart extends Component {
 
     this.state = {
       data: [],
+      salesBy:""
     }
   }
 
   manageCountries = (clients, param) => {
     // // TODO: Seperate function
-    console.log()
+    console.log(param)
     let data = clients.map(d => ({ [param]: d[param], sold: d.sold }))
     console.log(data)
     let mySet = new Set()
-    let countriesSet = data.map(d=> mySet.add(d[param]))
+    let countriesSet = data.map(d => mySet.add(d[param]))
 
     let countriesArr = Array.from(mySet)
     console.log(countriesArr)
 
-    let countries = countriesArr.map(c =>({ country: c, count: 0 }))
+    let countries = countriesArr.map(c => ({ country: c, count: 0 }))
     console.log(countries)
- 
+
 
     for (let d of data) {
       if (d.sold) {
@@ -37,22 +38,36 @@ class DateSalesChart extends Component {
     }
 
     this.setState({ data: countries })
-    }
-
-  componentDidMount = async () => {
-    await this.manageCountries( this.props.data, "emailType")
   }
 
+  componentDidMount = async () => {
+    console.log(this.state.salesBy)
+    await this.manageCountries(this.props.data, "country")
+  }
+  handleInput = (e) => {
+    const target = e.target
+    const value =target.value;
+    const name = target.name;
+    this.setState({ salesBy: value})
+  }
   render() {
     return (
+      <div>
+        <span>Sales By </span>
+        <select className="select-input" name="emailUpdate" onChange={this.handleInput}  >
+                    <option>Country</option>
+                    <option>emailType</option>
+                    <option>owner</option>
+                   
+                </select>
+        <BarChart width={500} height={300} data={this.state.data} barSize={50}>
+          <XAxis dataKey="country" />
+          <YAxis />
+          <Tooltip />
+          <Bar dataKey="count" fill="#8884d8" />
 
-      <BarChart width={500} height={300} data={this.state.data} barSize={50}>
-        <XAxis dataKey="country" />
-        <YAxis />
-        <Tooltip />
-        <Bar dataKey="count" fill="#8884d8" />
-
-      </BarChart>
+        </BarChart>
+      </div>
     );
   }
 }

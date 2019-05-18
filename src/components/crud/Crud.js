@@ -29,7 +29,8 @@ class Crud extends Component {
           
           name: `${this.state.firstNameAdd} ${this.state.lastNameAdd}`,
           country: this.state.countryAdd,
-          owner: this.state.ownerAdd
+          owner: this.state.ownerAdd,
+          firstContact: new Date()
         })
         return data
       }

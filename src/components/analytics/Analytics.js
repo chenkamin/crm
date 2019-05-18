@@ -23,9 +23,9 @@ class Analytics extends Component {
     }
 
     render() {
-        
-        if ( !this.state.loading ) {
-        
+
+        if (!this.state.loading) {
+
             return (
                 <div>
                     <Badges data={this.state.data} />

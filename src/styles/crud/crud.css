@@ -24,7 +24,6 @@
 
 .buttons-update{
     color:gold;
-    text-shadow: 0.5px 0.5px 0.5px rgb(212, 182, 9);
 }
 
 
@@ -68,3 +67,16 @@
     border-bottom: 1px solid rgb(190, 188, 188);
     opacity: 0.5;
 }
+
+.buttons-update{
+    cursor: pointer;
+}
+
+.add-btn{
+    cursor: pointer;
+}
+.add-btn:hover{
+    background-color: black;
+    color: gold;
+}
+

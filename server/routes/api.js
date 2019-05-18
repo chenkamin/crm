@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const Clients = require('../model/Clients')
+const data = require('./data')
+
 
 router.get('/clients', function(req,res){
     Clients.find({}, function(err,result){
@@ -31,5 +33,7 @@ router.get("/clientsSales", function(req,res){
 
     
 })
+
+
 
 module.exports = router

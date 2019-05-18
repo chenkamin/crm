@@ -63,3 +63,13 @@
       margin-left:3%;
       margin-right:3%;
   }
+
+
+  #top-employee{
+    font-size: 1.3em;
+  }
+
+  .employee-input{
+    width: 10%;
+    border:none;
+  }

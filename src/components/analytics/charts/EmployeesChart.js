@@ -9,6 +9,7 @@ class EmployeesChart extends Component {
 
     this.state = {
       data: [],
+      employeeNumber: 1
     }
   }
   manageOwners = () => {
@@ -28,11 +29,18 @@ class EmployeesChart extends Component {
   }
 
   MakeDataForCharts = () => {
-    let sortedArr =this.state.data.sort((a,b) => b.count- a.count).slice(0,3)
-    console.log(sortedArr)
+    console.log(this.state.employeeNumber)
+    let sortedArr =this.state.data.sort((a,b) => b.count- a.count).slice(0,this.state.employeeNumber)
     return sortedArr
 }
 
+handleInput = (e) => {
+  console.log(e)
+  const target = e.target
+  const value =target.value;
+  const name = target.name;
+  this.setState({employeeNumber : value})
+}
 
   componentDidMount = async () => {
     await this.manageOwners()
@@ -40,6 +48,15 @@ class EmployeesChart extends Component {
 
   render() {
     return (
+      <div>
+        <select className="select-input employee-input" name="emailUpdate" onChange={this.handleInput}  >
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+      <span id="top-employee">your Top Employees</span>
       <BarChart width={500} height={300}  data={this.MakeDataForCharts()} barSize={25} layout={"vertical"}>
       <XAxis type="number" />     
       <YAxis  dataKey="owner" type="category" width={100}/>
@@ -47,6 +64,7 @@ class EmployeesChart extends Component {
       <Bar dataKey="count" fill="#a0520e" />
 
     </BarChart>
+    </div>
     )
   }
 }
