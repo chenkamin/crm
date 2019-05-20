@@ -6,7 +6,7 @@ class Add extends Component {
         this.props.makeNewClient()
     }
     render() { 
-
+console.log(this.props.showLoader)
         return (  
             <div>
             <h2 id="add-header">Add Client</h2>
@@ -31,7 +31,10 @@ class Add extends Component {
                 <input  name="ownerAdd" onChange={this.props.handleInput}/>
                 </div>
 
+                <div className="btns">
                 <div className="add-btn" onClick={this.makeNewClient}><div className="btn-text">Add New Client</div></div>
+                <span className={this.props.showLoader? "added": "added-hide"}><span className="new-client">New Client</span> </span>
+                </div>
             </div>
             </div>
         )

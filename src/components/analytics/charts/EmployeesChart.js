@@ -9,7 +9,7 @@ class EmployeesChart extends Component {
 
     this.state = {
       data: [],
-      employeeNumber: 1
+      employeeNumber: 3
     }
   }
   manageOwners = () => {
@@ -29,13 +29,11 @@ class EmployeesChart extends Component {
   }
 
   MakeDataForCharts = () => {
-    console.log(this.state.employeeNumber)
     let sortedArr =this.state.data.sort((a,b) => b.count- a.count).slice(0,this.state.employeeNumber)
     return sortedArr
 }
 
 handleInput = (e) => {
-  console.log(e)
   const target = e.target
   const value =target.value;
   const name = target.name;
@@ -49,14 +47,14 @@ handleInput = (e) => {
   render() {
     return (
       <div>
-        <select className="select-input employee-input" name="emailUpdate" onChange={this.handleInput}  >
+        <select className="select-input employee-input" name="emailUpdate" onChange={this.handleInput}  value={this.state.employeeNumber} >
                     <option>1</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
                     <option>5</option>
                 </select>
-      <span id="top-employee">your Top Employees</span>
+      <span className="chart-header">your Top Employees</span>
       <BarChart width={500} height={300}  data={this.MakeDataForCharts()} barSize={25} layout={"vertical"}>
       <XAxis type="number" />     
       <YAxis  dataKey="owner" type="category" width={100}/>

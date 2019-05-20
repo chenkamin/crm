@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../../styles/crud/crud.css'
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 class Update extends Component {
 
@@ -20,7 +21,7 @@ class Update extends Component {
         let ownersArr = Array.from(ownersSet)
         return ownersArr
     }
-
+  
     render() {
         let data = this.props.data
 
@@ -31,7 +32,7 @@ class Update extends Component {
                 <h2>Update</h2>
                 <div className="update">
                     <span>Client: </span>
-                    <input list="clients" name="clientUpdate" onChange={this.props.handleInput} placeholder="Client Name"/>
+                    <input list="clients" name="clientUpdate" onChange={this.props.handleInput} placeholder="Client Name" />
                     <datalist id="clients">
                         {data.map(d => <option value={d.name} />)}
                     </datalist>
@@ -39,16 +40,17 @@ class Update extends Component {
 
                 <div className="update-transfer update-item">
                     <span className="head-item">Transfer Ownership to: </span>
-                    <select className="select-input" name="ownerUpdate" onChange={this.props.handleInput} >
+                    <select className="select-input" name="ownerUpdate" onChange={this.props.handleInput} value={this.props.state.ownerUpdate}>
                         <option>owner</option>
                         {this.makeOwnersSet().map(d => <option >{d}</option>)}
                     </select>
-                    <span onClick={this.FindIdAndUpdateClient}  className="buttons-update">Transfer</span>
+                    <span onClick={this.FindIdAndUpdateClient}  className="buttons-update">Transfer  {this.props.state.showV == "transfer"?  <i class="fas fa-check"></i>: null}
+</span>
                 </div>
 
                 <div className="update-mail update-item">
                 <span className="head-item">Send Email: </span>
-                <select className="select-input" name="emailUpdate" onChange={this.props.handleInput}>
+                <select className="select-input" name="emailUpdate" onChange={this.props.handleInput} value={this.props.state.emailUpdate}>
                     <option></option>
                     <option>null</option>
                     <option>A</option>
@@ -56,16 +58,18 @@ class Update extends Component {
                     <option>C</option>
                     <option>D</option>
                 </select>
-                <span onClick={this.FindIdAndUpdateClient}  className="buttons-update">Send</span>
+                <span onClick={this.FindIdAndUpdateClient}  className="buttons-update">Send {this.props.state.showV == "email"?  <i class="fas fa-check"></i>: null}</span>
                 </div>
 
                 <div className="update-declare update-item">
                 <span className="head-item">Declare Sale! </span>
                 <span></span>
-                <span onClick={this.FindIdAndUpdateClient} className="buttons-update">Declare</span>
+                <span onClick={this.FindIdAndUpdateClient} className="buttons-update">Declare {this.props.state.showV== "declare"?  <i class="fas fa-check"></i>: null}</span>
                 </div>
                 <div id="line"></div>
-            </div>
+                </div>
+
+
         )
     }
 }

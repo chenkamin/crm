@@ -21,19 +21,19 @@ router.post('/client', function(req,res){
 
 router.put('/client/:clientId', function(req,res){
     let client = req.params.clientId
-    Clients.findOneAndUpdate({_id: client}, req.body ,(err, result)=>  { } )
+    Clients.findOneAndUpdate({_id: client}, req.body ,(err, result)=>  {console.log(result) } )
     res.send(req.body)
 })
 
-router.get("/clientsSales", function(req,res){
-    // let number = Clients.count({country:{$in: ['France', 'Croatia']}}, function( err, count){
-    //     return count
-    // })
-  
+    
 
     
-})
 
 
+
+// for(let d of data){
+//     let c1 = new Clients(d)
+//     c1.save()
+// }
 
 module.exports = router

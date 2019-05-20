@@ -4,7 +4,7 @@ import '../../../styles/analytics/analytics.css'
 class ClientsChart extends Component {
     render() { 
         return ( 
-            <div>C</div>
+            <div></div>
          )
     }
 }

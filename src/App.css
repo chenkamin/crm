@@ -6,7 +6,7 @@ body{
 
 .nav-bar{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 7fr;
+  grid-template-columns: 1fr 1fr 1fr 7fr 1fr ;
   background-color: black;
 }
 
@@ -17,7 +17,25 @@ body{
 
 .head{
 display: grid;
-padding: 18%;
+padding-top: 20%;
+padding-bottom: 20%;
+padding-left:10%;
+text-align: center;
 
+}
+
+.head-of{
+  display: none;
+
+}
+
+.head-show{
+  display: grid;
+padding: 18%;
+}
+
+
+.active{
+  background-color:rgb(64, 116, 129)
 }
 
