@@ -1,33 +1,41 @@
-import React, {Component } from 'react';
+import React, { Component } from 'react';
 import '../../../styles/analytics/analytics.css'
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend,Line,LineChart } from 'recharts';
+import { XAxis, YAxis, Tooltip, Legend, Line, LineChart } from 'recharts';
 
 class CountrySalesChart extends Component {
-    
+
+    getFormmatedDate = date => {
+        date = new Date(date);
+        let month = date.toLocaleString('en-us', { month: 'long' })
+        let day = date.getDay()
+        return `${day}-${month}`;
+    };
+
+    render() {
+        let dates = this.props.data.map(d => ({ firstContact: new Date(d.firstContact), sold: d.sold }))
+        let subsDate = dates.map(m => ({ days: Math.round(Math.abs(new Date() - m.firstContact) / 1000 / 60 / 60 / 24), date: m.firstContact, sold: m.sold }))
+            .filter(s => s.days < 395 && s.days > 365 && s.sold === true)
+        let obj = {}
+        let arr = []
+        subsDate.forEach(d => obj[d.date] ? obj[d.date]++ : obj[d.date] = 1)
+        Object.keys(obj).forEach(d => arr.push({ date: this.getFormmatedDate(d), sales: obj[d] * 3 }))
 
 
-    render() { 
-        let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-        let dates = this.props.data.map(d=> ({firstContact:new Date (d.firstContact), sold: d.sold}) )
-        let today = new Date(); //"now"
-        let subsDate = dates.map(m=> ({days:Math.round(Math.abs(today - m.firstContact)/1000/60/60/24), date: m.firstContact,sold:m.sold}))
-        console.log(subsDate)
-        let data = subsDate.filter(s=> s.days <365 && s.sold === true)
 
-        console.log(data)
-        // .map(d=>({dateMonth: new Date(d.date).getMonth()}))
-        // dateDay:new Date(d.date).getDay()
-        let sortedArr =data.sort((a,b) => b.dateMonth- a.dateMonth).slice(0,10)
-        console.log(sortedArr)
-
-        
-        return (  
+        return (
             <div>
-   
+                <div className="chart-header">This Month Sales</div>
+                <LineChart width={730} height={250} data={arr}
+                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                    <XAxis dataKey="date" />
+                    <YAxis />
+                    <Tooltip />
+                    <Line type="monotone" dataKey="sales" stroke="red" />
+                </LineChart>
             </div>
         )
     }
 }
- 
+
 export default CountrySalesChart;

@@ -9,8 +9,8 @@ class Charts extends Component {
         return (
             <div className="charts">
                 <EmployeesChart data={this.props.data}/>
-                <CountySalesChart data={this.props.data}/>
                 <SalesChart data={this.props.data} />
+                <CountySalesChart data={this.props.data}/>
                 <ClientsChart />
             </div>
         )

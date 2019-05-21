@@ -6,7 +6,7 @@
 .pop-on{
     width:405px;
     height:250px;
-    position: absolute;
+    position: fixed;
     left: 25%;
     right: 25%;
     top: 25%;
