@@ -52,7 +52,7 @@ class DateSalesChart extends Component {
                     <option >owner</option>
                    
                 </select>
-        <BarChart width={700} height={300} data={this.manageCountries(this.props.data, this.state.salesBy)} barSize={50}>
+        <BarChart width={700} height={300} data={this.manageCountries(this.props.data, this.state.salesBy)} >
           <XAxis dataKey="country" />
           <YAxis />
           <Tooltip />

@@ -46,7 +46,7 @@ handleInput = (e) => {
 
   render() {
     return (
-      <div>
+      <div id="employee-chart">
         <select className="select-input employee-input" name="emailUpdate" onChange={this.handleInput}  value={this.state.employeeNumber} >
                     <option>1</option>
                     <option>2</option>

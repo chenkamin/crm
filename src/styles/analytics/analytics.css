@@ -57,19 +57,29 @@
   
   /* //Charts */
 
-  .charts{
+  .top-charts{
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       margin-left:3%;
       margin-right:3%;
   }
 
+  .bottom-charts{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-left:3%;
+    margin-right:3%;
+  }
 
 .chart-header{
     font-size: 1.3em;
+    margin-left:5%;
+    margin-bottom:1%;
   }
 
   .employee-input{
     width: 10%;
     border:none;
   }
+
+  

@@ -7,11 +7,16 @@ import ClientsChart from './ClientsChart';
 class Charts extends Component {
     render() {
         return (
-            <div className="charts">
+            <div>
+            <div className="top-charts">
                 <EmployeesChart data={this.props.data}/>
                 <SalesChart data={this.props.data} />
+                </div>
+                <div className="bottom-charts">
                 <CountySalesChart data={this.props.data}/>
                 <ClientsChart />
+                </div>
+            
             </div>
         )
     }
